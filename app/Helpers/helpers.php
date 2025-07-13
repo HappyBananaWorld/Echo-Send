@@ -6,9 +6,9 @@ function es_plugin_asset($path): string
     // return ESPLUGIN_ASSETS . $path;
 }
 
-function es_app_path($path): void
+function es_app_path($path): string
 {
-    include ES_PLUGIN_APP_PATH . $path;
+    return ES_PLUGIN_APP_PATH . $path;
 }
 
 function es_path($path): string
