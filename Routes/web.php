@@ -16,4 +16,13 @@ add_action('admin_menu', function () {
         '',
         1
     );
+
+    add_submenu_page(
+        'echo-send',
+        'Echo Send Setting',
+        'setting',
+        'manage_options',
+        'echo-send-setting',
+        [new SettingController(), 'index']
+    );
 });

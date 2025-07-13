@@ -16,3 +16,7 @@ function es_path($path): string
     return ES_PLUGIN_PATH . $path;
 }
 
+function es_view_path($path)
+{
+    return es_app_path('Views/' . $path);
+}
