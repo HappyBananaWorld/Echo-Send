@@ -11,3 +11,8 @@ function es_app_path($path): void
     include ES_PLUGIN_APP_PATH . $path;
 }
 
+function es_path($path): string
+{
+    return ES_PLUGIN_PATH . $path;
+}
+
