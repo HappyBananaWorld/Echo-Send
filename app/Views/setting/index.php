@@ -1,27 +1,52 @@
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
 
+<?php
+$es_options = $es_options ?? [];
+
+function is_checked($key, $options) {
+    return !empty($options[$key]) && $options[$key] === "on" ? 'checked' : '';
+}
+
+function get_value($key, $options) {
+    return isset($options[$key]) ? esc_attr($options[$key]) : 'off';
+}
+?>
+
 <div class="es_form-wrapper">
   <div class="es_form-container">
     <h2 class="es_form-title">تنظیمات پیامک</h2>
     <form action="" method="post">
       <label for="es_api-key" class="es_form-label">کلید API:</label>
-      <input type="text" id="es_api-key" name="api-key" class="es_input-text" placeholder="مثلاً: 12345ABCDEF">
+      <input type="text" id="es_api-key" name="api-key" class="es_input-text" placeholder="مثلاً: 12345ABCDEF"
+             value="<?php echo get_value('_es_api-key', $es_options); ?>">
 
       <div class="es_checkbox-group">
         <label class="es_checkbox-label">
-          <input type="checkbox" name="sms-report" class="es_checkbox-input"> 
+          <input type="checkbox" name="sms-report" class="es_checkbox-input"
+          value="<?php echo get_value('_es_sms-report', $es_options); ?>"
+                 <?php echo is_checked('_es_sms-report', $es_options); ?>> 
           <span class="es_checkbox-text">دریافت پیامک گزارش خرید</span>
         </label>
+
         <label class="es_checkbox-label">
-          <input type="checkbox" name="after-purchase" class="es_checkbox-input"> 
+          <input type="checkbox" name="after-purchase" class="es_checkbox-input"
+          value="<?php echo get_value('_es_after-purchase', $es_options); ?>"
+                 <?php echo is_checked('_es_after-purchase', $es_options); ?>
+                 > 
           <span class="es_checkbox-text">ارسال پیامک بعد از خرید</span>
         </label>
+
         <label class="es_checkbox-label">
-          <input type="checkbox" name="after-complete" class="es_checkbox-input"> 
+          <input type="checkbox" name="after-complete" class="es_checkbox-input"
+           value="<?php echo get_value('_es_after-complete', $es_options); ?>"
+                 <?php echo is_checked('_es_after-complete', $es_options); ?>> 
           <span class="es_checkbox-text">ارسال پیامک بعد از تکمیل</span>
         </label>
+
         <label class="es_checkbox-label">
-          <input type="checkbox" name="tracking-code" class="es_checkbox-input"> 
+          <input type="checkbox" name="tracking-code" class="es_checkbox-input"
+               value="<?php echo get_value('_es_tracking-code', $es_options); ?>"
+                 <?php echo is_checked('_es_tracking-code', $es_options); ?>> 
           <span class="es_checkbox-text">ارسال پیامک کد رهگیری</span>
         </label>
       </div>
@@ -32,7 +57,7 @@
 </div>
 
 <style>
-  @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+  /* @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css'); */
 
   .es_form-wrapper {
     direction: rtl !important;

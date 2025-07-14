@@ -21,6 +21,7 @@ define('ES_PLUGIN_APP_PATH', ES_PLUGIN_DIR . "app/");
 define('ES_PLUGIN_PATH', ES_PLUGIN_DIR);
 define('ES_PLUGIN_ASSETS', ES_PLUGIN_DIR . "assets/");
 
+require_once ES_PLUGIN_DIR . 'vendor/autoload.php';
 require_once ES_PLUGIN_PATH . 'config/constants.php';
 require_once ES_PLUGIN_APP_PATH . 'Helpers/helpers.php';
 require_once ES_PLUGIN_PATH . 'bootstrap/app.php';

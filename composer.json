@@ -1,0 +1,16 @@
+{
+    "name": "mrbanana/echo-send",
+    "autoload": {
+        "psr-4": {
+            "AsaideaIr\\EchoSend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mr Banana"
+    }
+    ],
+    "require": {
+        "illuminate/database": "^12.2"
+    }
+}
