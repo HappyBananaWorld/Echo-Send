@@ -3,7 +3,7 @@
 <div class="es_form-wrapper">
   <div class="es_form-container">
     <h2 class="es_form-title">تنظیمات پیامک</h2>
-    <form>
+    <form action="" method="post">
       <label for="es_api-key" class="es_form-label">کلید API:</label>
       <input type="text" id="es_api-key" name="api-key" class="es_input-text" placeholder="مثلاً: 12345ABCDEF">
 
@@ -26,7 +26,7 @@
         </label>
       </div>
 
-      <button type="submit" class="es_submit-button">ثبت تنظیمات</button>
+      <button type="submit" name="submit" class="es_submit-button">ثبت تنظیمات</button>
     </form>
   </div>
 </div>
